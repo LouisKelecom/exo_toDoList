@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./public/css/style.css">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <div class="container my-3">
+        <div id="bloc1">
+            <h1>TodoList</h1>
+        </div>
+        <div id="bloc2">
+            <div>
+                <p class="m-2" id="tache">Ajouter une tâche : </p>
+                <input type="text" class="mx-2">
+                <button id="btnAdd" type="button" class="btn ml-3">Ajouter</button>
+            </div>
+            <div class="m-3">
+                <ul class="m-0 list-group">
+                    <li class="list-group-item d-flex">
+                        <p class="m-0 mr-auto">Faire les courses</p>
+                        <span>
+                            <i class="fas fa-check-circle fa-sm"></i>
+                            <i class="fas fa-edit fa-sm"></i>
+                            <i class="fas fa-trash-alt fa-sm"></i>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="./src/js/index.js"></script>
 </body>
+
 </html>
