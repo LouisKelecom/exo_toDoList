@@ -8,10 +8,8 @@ let ulBase = document.getElementsByClassName("list-group")[0];
 console.log(ulBase);
 
 
+btnAdd.addEventListener("click", () => {
 
-// Fonction qui crée les li avec tout ce qui va avec
-
-let createLi = () => {
 
     let liCree = document.createElement("li"); // Créer un li
     liCree.classList.add("list-group-item", "d-flex"); // Ajouter les class au li
@@ -43,46 +41,10 @@ let createLi = () => {
 
     inputRecup.value = ""; // Remettre l'input vierge
 
-};
+    // Exo delete 
 
-
-// // Fonction du iTrash, supprime le li quand on clique sur l'icône trash
-
-// Récupérer les iTrash créés
-
-
-
-
-let liRecup = document.getElementsByClassName("list-group-item");
-console.log(liRecup);
-
-
-let trashRemoveLi = (event) => {
-
-    console.log(event.target.parentElement.parentElement);
-
-    event.target.parentElement.parentElement.remove();
-    // for (let i = 0; i < liRecup.length; i++) {
-
-    //     ulBase.removeChild(liRecup[i]);
-    // };
-
-}
-
-
-
-
-btnAdd.addEventListener("click", () => {
-
-    createLi()
-
-    let iTrash = document.getElementsByClassName("fa-trash-alt");
-    console.log(iTrash);
-
-    for (let i = 0; i < iTrash.length; i++) {
-        iTrash[i].addEventListener("click", trashRemoveLi);
-    };
+    iTrash.addEventListener("click", () => {
+        liCree.remove();
+    })
 
 });
-
-console.log(inputRecup.value);
