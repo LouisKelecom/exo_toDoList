@@ -47,4 +47,13 @@ btnAdd.addEventListener("click", () => {
         liCree.remove();
     })
 
+
+    // Exo check
+
+    iCheck.addEventListener("click", () => {
+        liCree.classList.toggle("li-bg-green");
+    })
+
+    
+
 });

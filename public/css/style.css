@@ -5684,13 +5684,22 @@ body #bloc2 .btn {
   color: white;
 }
 body #bloc2 .list-group .fa-check-circle {
-  color: green;
+  color: #19d344;
 }
 body #bloc2 .list-group .fa-edit {
   color: orange;
 }
 body #bloc2 .list-group .fa-trash-alt {
   color: red;
+}
+body #bloc2 .list-group .fa-save {
+  color: #19d344;
+}
+body #bloc2 .list-group .d-none {
+  display: none;
+}
+body #bloc2 .li-bg-green {
+  background-color: green;
 }
 
 /*# sourceMappingURL=style.css.map */
