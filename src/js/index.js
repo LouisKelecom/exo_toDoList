@@ -54,6 +54,59 @@ btnAdd.addEventListener("click", () => {
         liCree.classList.toggle("li-bg-green");
     })
 
-    
+    // Exo edit
+
+    iEdit.addEventListener("click", () => {
+
+        // Récupère le texte du paragraphe du li créé
+        let recupTextP = document.getElementsByClassName("m-0", "mr-auto")[1].innerText;
+        console.log(recupTextP);
+
+        // On cache le p avec une class d-none
+        pCree.classList.add("d-none");
+
+        // On crée un input
+        let newInput = document.createElement("input");
+        
+        // On ajoute la class m-0 et mr-auto
+        newInput.classList.add("m-0", "mr-auto");
+        
+        // On donne la valeur de recupTextP au nouvel input
+        newInput.value = pCree.textContent;
+        
+        // On ajoute l'input au li
+        liCree.insertBefore(newInput, spanCree);
+        console.log(newInput.value);
+
+        // On ajoute la classe d-none à iCheck, iTrash et iEdit
+        iCheck.classList.add("d-none");
+        iTrash.classList.add("d-none");
+        iEdit.classList.add("d-none");
+
+        // On crée une icône iSave
+        let iSave = document.createElement("i"); // Créer le iSave
+        iSave.classList.add("fas", "fa-save", "fa-sm", "mr-1"); // Ajouter la class au iSave
+        spanCree.appendChild(iSave); // Ajouter le iSave dans le spanCree
+
+
+        // On crée une fonction qui enregistre la nouvelle valeur du paragraphe
+        let saveNewText = () => {
+            
+            // On supprime l'input
+            newInput.remove();
+            pCree.classList.remove("d-none");
+            pCree.textContent = newInput.value;
+            console.log(pCree.textContent);
+
+            // On supprime l'icône iSave et on enlève la class d-none aux autres icônes
+            iSave.remove();
+
+            iCheck.classList.remove("d-none");
+            iTrash.classList.remove("d-none");
+            iEdit.classList.remove("d-none");
+        }
+
+        iSave.addEventListener("click", saveNewText);
+    })
 
 });
