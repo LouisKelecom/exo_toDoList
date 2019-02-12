@@ -5683,23 +5683,32 @@ body #bloc2 .btn {
   background-color: #4C57FB;
   color: white;
 }
-body #bloc2 .list-group .fa-check-circle {
+body #bloc2 .list-group .list-group-item {
+  display: flex;
+}
+body #bloc2 .list-group .list-group-item .spanIcone {
+  justify-content: flex-end;
+}
+body #bloc2 .list-group .list-group-item .spanIcone .fa-check-circle {
   color: #19d344;
 }
-body #bloc2 .list-group .fa-edit {
+body #bloc2 .list-group .list-group-item .spanIcone .fa-edit {
   color: orange;
 }
-body #bloc2 .list-group .fa-trash-alt {
+body #bloc2 .list-group .list-group-item .spanIcone .fa-trash-alt {
   color: red;
 }
-body #bloc2 .list-group .fa-save {
+body #bloc2 .list-group .list-group-item .spanIcone .fa-save {
   color: #19d344;
 }
-body #bloc2 .list-group .d-none {
+body .d-none {
   display: none;
 }
-body #bloc2 .li-bg-green {
+body .li-bg-green {
   background-color: green;
+}
+body .filtres-bg {
+  background-color: #DCDCDC;
 }
 
 /*# sourceMappingURL=style.css.map */

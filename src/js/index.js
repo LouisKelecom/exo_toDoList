@@ -7,12 +7,19 @@ console.log(btnAdd);
 let ulBase = document.getElementsByClassName("list-group")[0];
 console.log(ulBase);
 
+let btnToDo = document.getElementById("btnToDo");
+console.log(btnToDo);
+let btnDone = document.getElementById("btnDone");
+console.log(btnDone);
+let btnAll = document.getElementById("btnAll");
+console.log(btnAll);
+
 
 btnAdd.addEventListener("click", () => {
 
 
     let liCree = document.createElement("li"); // Créer un li
-    liCree.classList.add("list-group-item", "d-flex"); // Ajouter les class au li
+    liCree.classList.add("list-group-item"); // Ajouter les class au li
 
     ulBase.appendChild(liCree); // Ajouter liCree dans le ul
 
@@ -25,6 +32,7 @@ btnAdd.addEventListener("click", () => {
     pCree.appendChild(textInput); // Ajouter le contenu de l'input de le p
 
     let spanCree = document.createElement("span"); // Créer un span
+    spanCree.classList.add("spanIcone") // Ajouter la class spanIcone
     liCree.appendChild(spanCree); // Ajouter le spanCree dans le li
 
     let iCheck = document.createElement("i"); // Créer le iCheck
@@ -110,3 +118,43 @@ btnAdd.addEventListener("click", () => {
     })
 
 });
+
+
+
+// Fonction Done
+btnDone.addEventListener("click", () => {
+    let recupAllLi = document.getElementsByTagName("li");
+  
+    for (const elt of recupAllLi) {
+      if (!elt.className.includes("li-bg-green")) {
+        elt.classList.add("d-none");
+      } else {
+        elt.classList.remove("d-none");
+      }
+    }
+  });
+
+
+// Fonction ToDo
+btnToDo.addEventListener("click", () => {
+    let recupAllLi = document.getElementsByTagName("li");
+  
+    for (const elt of recupAllLi) {
+      if (elt.className.includes("li-bg-green")) {
+        elt.classList.add("d-none");
+      } else {
+        elt.classList.remove("d-none");
+      }
+    }
+  });
+  
+  // Fonction All
+  btnAll.addEventListener("click", () => {
+    let recupAllLi = document.getElementsByTagName("li");
+  
+    for (const elt of recupAllLi) {
+      elt.classList.remove("d-none"); // d-none
+    }
+  });
+
+
